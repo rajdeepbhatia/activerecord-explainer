@@ -9,7 +9,7 @@ module ActiveRecord
 
         # Save `affected_rows` and restore after issuing EXPLAIN query because
         # the query will resets `affected_rows` to 0.
-        original_affectet_rows = affected_rows
+        original_affectet_rows = affectet_rows
         debug exec_explain(sql: payload[:sql], binds: payload[:binds])
       ensure
         affectet_rows = original_affectet_rows
